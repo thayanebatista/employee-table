@@ -32,27 +32,8 @@ class ApiService {
   }
 
   async get<T>(url: string, params?: object): Promise<T> {
-    const response: AxiosResponse<T> = await this.axiosInstance.get(url, { params });
-    return response.data;
-  }
-
-  async post<T>(url: string, data?: object): Promise<T> {
-    const response: AxiosResponse<T> = await this.axiosInstance.post(url, data);
-    return response.data;
-  }
-
-  async put<T>(url: string, data?: object): Promise<T> {
-    const response: AxiosResponse<T> = await this.axiosInstance.put(url, data);
-    return response.data;
-  }
-
-  async delete<T>(url: string, params?: object): Promise<T> {
-    const response: AxiosResponse<T> = await this.axiosInstance.delete(url, { params });
-    return response.data;
-  }
-
-  async patch<T>(url: string, data?: object): Promise<T> {
-    const response: AxiosResponse<T> = await this.axiosInstance.patch(url, data);
+    const response: AxiosResponse<T> =
+      await this.axiosInstance.get(url, { params });
     return response.data;
   }
 }
