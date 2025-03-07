@@ -28,19 +28,23 @@ const Table: React.FC<TableProps> = ({ employees }) => {
   };
 
   return (
-    <div className="flex flex-col gap-4 rounded-xl">
-      <div className="flex flex-col items-start gap-2 p-3">
+    <div className="flex flex-col gap-6 pt-6 rounded-xl">
+      <div className="flex flex-col items-start px-3">
         <h1 className="text-black">Funcionários</h1>
-        <SearchInput />
       </div>
+        <SearchInput />
       <div className="rounded-xl bg-white shadow-md">
         <table className="w-full">
           <thead className="bg-primary rounded-2xl">
             <tr>
-              <th className="w-1/4 p-4 text-left text-white">Foto</th>
-              <th className="w-2/4 p-4 text-left text-white">Nome</th>
-              <th className="w-1/4 p-4 text-right text-white">
-                <img src={CircleIcon} alt="Ações" className="h-2 w-2 cursor-pointer" />
+              <th className="w-1/4 p-4 text-left text-white">
+                <h2>Foto</h2>
+              </th>
+              <th className="w-2/4 p-4 text-left text-white">
+                <h2>Nome</h2>
+              </th>
+              <th className="flex items-center justify-end">
+                <img src={CircleIcon} alt="Ações" className="h-2 w-2 mx-7 my-5 cursor-pointer" />
               </th>
             </tr>
           </thead>
