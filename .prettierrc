@@ -9,5 +9,9 @@
   "quoteProps": "as-needed",
   "arrowParens": "always",
   "endOfLine": "auto",
-  "proseWrap": "always"
+  "proseWrap": "always",
+  "plugins": [
+    "prettier-plugin-tailwindcss"
+  ],
+  "tailwindStylesheet": "./src/tailwind.css"
 }

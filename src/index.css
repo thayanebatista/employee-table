@@ -1,5 +1,19 @@
 @import "tailwindcss";
 
+@theme {
+  /* Colors */
+  --color-primary: #0500FF;
+  --color-gray: #F0F0F0;
+
+  /* Fonts */
+  --font-sans: 'Helvetica Neue', sans-serif;
+  --font-helvetica-roman: 'HelveticaNeueRoman';
+  --font-helvetica-medium: 'HelveticaNeueMedium';
+
+  /* Shadows */
+  --shadow-md: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+} 
+
 @font-face {
   font-family: 'HelveticaNeueRoman';
   src: url('./fonts/HelveticaNeueRoman.otf') format('opentype');

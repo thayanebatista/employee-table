@@ -19,7 +19,7 @@ class ApiService {
       (config) => {
         return config;
       },
-      (error) => Promise.reject(error)
+      (error) => Promise.reject(error),
     );
 
     this.axiosInstance.interceptors.response.use(
@@ -27,13 +27,12 @@ class ApiService {
       (error) => {
         console.error('Erro na requisição:', error);
         return Promise.reject(error);
-      }
+      },
     );
   }
 
   async get<T>(url: string, params?: object): Promise<T> {
-    const response: AxiosResponse<T> =
-      await this.axiosInstance.get(url, { params });
+    const response: AxiosResponse<T> = await this.axiosInstance.get(url, { params });
     return response.data;
   }
 }
