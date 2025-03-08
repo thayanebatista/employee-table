@@ -12,18 +12,17 @@
 
   /* Fonts */
   --font-sans: 'Helvetica Neue', sans-serif;
-  --font-medium: 'HelveticaNeueMedium';
-  --font-roman: 'HelveticaNeueRoman';
-  --font-h1-family: 'HelveticaNeueMedium', sans-serif;
+
   --font-h1-size: 20px;
+  --font-h1-weight: 500;
   --font-h1-line-height: 24.42px;
 
-  --font-h2-family: 'HelveticaNeueMedium', sans-serif;
   --font-h2-size: 16px;
+  --font-h2-weight: 400;
   --font-h2-line-height: 19.54px;
 
-  --font-h3-family: 'HelveticaNeueRoman', sans-serif;
   --font-h3-size: 16px;
+  --font-h3-weight: 400;
   --font-h3-line-height: 19.09px;
 
   /* Shadows */
@@ -31,33 +30,29 @@
 } 
 
 @font-face {
-  font-family: 'HelveticaNeueRoman';
+  font-family: 'Helvetica Neue';
   src: url('./fonts/HelveticaNeueRoman.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'HelveticaNeueMedium';
-  src: url('./fonts/HelveticaNeueMedium.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-}
-
 h1 {
   font-family: var(--font-h1-family);
+  font-weight: var(--font-h1-weight);
   font-size: var(--font-h1-size);
   line-height: var(--font-h1-line-height);
 }
 
 h2 {
   font-family: var(--font-h2-family);
+  font-weight: var(--font-h2-weight);
   font-size: var(--font-h2-size);
   line-height: var(--font-h2-line-height);
 }
 
 h3 {
   font-family: var(--font-h3-family);
+  font-weight: var(--font-h3-weight);
   font-size: var(--font-h3-size);
   line-height: var(--font-h3-line-height);
 }

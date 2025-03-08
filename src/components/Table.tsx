@@ -29,30 +29,45 @@ const Table: React.FC<TableProps> = ({ employees }) => {
 
   return (
     <div className="flex flex-col gap-6 rounded-xl py-6">
-      <div className="flex flex-col items-start px-3">
-        <h1 className="text-black">Funcionários</h1>
+      <div className="flex flex-col gap-4 px-5 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+        <div>
+          <h1 className="text-black">Funcionários</h1>
+        </div>
+        <SearchInput />
       </div>
-      <SearchInput />
-      <div className="px-3">
+      <div className="px-5 lg:px-8">
         <table className="w-full border-separate border-spacing-0 overflow-hidden rounded-xl shadow-lg">
-          <thead>
-            <tr className="bg-primary first:rounded-t-xl">
+          <thead className="bg-primary">
+            <tr className="first:rounded-t-xl">
               <th className="p-4 text-left text-white first:rounded-tl-xl">
-                <h2>Foto</h2>
+                <h2>FOTO</h2>
               </th>
               <th className="p-4 text-left text-white">
-                <h2>Nome</h2>
+                <h2>NOME</h2>
+              </th>
+              <th className="hidden p-4 text-left text-white lg:table-cell">
+                <h2>CARGO</h2>
+              </th>
+              <th className="hidden p-4 text-left text-white lg:table-cell">
+                <h2>DATA DE ADMISSÃO</h2>
+              </th>
+              <th className="hidden p-4 text-left text-white lg:table-cell">
+                <h2>TELEFONE</h2>
               </th>
               <th className="flex items-center justify-end first:rounded-tr-xl">
-                <img src={CircleIcon} alt="Ações" className="mx-7 my-5 h-2 w-2 cursor-pointer" />
+                <img
+                  src={CircleIcon}
+                  alt="Ações"
+                  className="mx-7 my-5 h-2 w-2 cursor-pointer lg:hidden"
+                />
               </th>
             </tr>
           </thead>
-          <tbody className="bg-white shadow-2xl">
+          <tbody className="bg-white">
             {employees?.map((employee) => (
               <React.Fragment key={employee.id}>
                 <tr
-                  className="cursor-pointer last:rounded-b-xl hover:bg-gray-100"
+                  className="cursor-pointer hover:bg-gray-100 lg:cursor-default"
                   onClick={() => toggleEmployeeExpand(employee.id)}
                 >
                   <td className="p-4">
@@ -63,18 +78,26 @@ const Table: React.FC<TableProps> = ({ employees }) => {
                     />
                   </td>
                   <td className="p-4">{employee.name}</td>
+
+                  <td className="hidden p-4 lg:table-cell">{employee.job}</td>
+                  <td className="hidden p-4 lg:table-cell">
+                    {formatDate(employee.admission_date)}
+                  </td>
+                  <td className="hidden p-4 lg:table-cell">{formatPhoneNumber(employee.phone)}</td>
+
                   <td className="p-4 text-right">
                     <div className="flex items-center justify-end space-x-2">
                       {expandedEmployeeId === employee.id ? (
-                        <img src={ChevronUpIcon} alt="Expandir" className="h-8 w-8" />
+                        <img src={ChevronUpIcon} alt="Expandir" className="h-8 w-8 lg:hidden" />
                       ) : (
-                        <img src={ChevronDownIcon} alt="Expandir" className="h-8 w-8" />
+                        <img src={ChevronDownIcon} alt="Expandir" className="h-8 w-8 lg:hidden" />
                       )}
                     </div>
                   </td>
                 </tr>
+
                 {expandedEmployeeId === employee.id && (
-                  <tr>
+                  <tr className="lg:hidden">
                     <td colSpan={3} className="bg-white p-4">
                       <div className="flex flex-col gap-4 text-black">
                         <div className="flex justify-between gap-2">
