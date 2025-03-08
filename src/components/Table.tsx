@@ -6,9 +6,9 @@ import { SearchInput } from './SearchInput';
 import { Employee } from '../stores/employeeStore';
 import { usePhoneFormat } from '../hooks/usePhoneFormat';
 
+import CircleIcon from '../assets/icons/Circle.svg';
 import ChevronUpIcon from '../assets/icons/ChevronUp.svg';
 import ChevronDownIcon from '../assets/icons/ChevronDown.svg';
-import CircleIcon from '../assets/icons/Circle.svg';
 
 interface TableProps {
   employees?: Employee[];
@@ -28,31 +28,31 @@ const Table: React.FC<TableProps> = ({ employees }) => {
   };
 
   return (
-    <div className="flex flex-col gap-6 pt-6 rounded-xl">
+    <div className="flex flex-col gap-6 rounded-xl py-6">
       <div className="flex flex-col items-start px-3">
         <h1 className="text-black">Funcionários</h1>
       </div>
-        <SearchInput />
-      <div className="rounded-xl bg-white shadow-md">
-        <table className="w-full">
-          <thead className="bg-primary rounded-2xl">
-            <tr>
-              <th className="w-1/4 p-4 text-left text-white">
+      <SearchInput />
+      <div className="px-3">
+        <table className="w-full border-separate border-spacing-0 overflow-hidden rounded-xl shadow-lg">
+          <thead>
+            <tr className="bg-primary first:rounded-t-xl">
+              <th className="p-4 text-left text-white first:rounded-tl-xl">
                 <h2>Foto</h2>
               </th>
-              <th className="w-2/4 p-4 text-left text-white">
+              <th className="p-4 text-left text-white">
                 <h2>Nome</h2>
               </th>
-              <th className="flex items-center justify-end">
-                <img src={CircleIcon} alt="Ações" className="h-2 w-2 mx-7 my-5 cursor-pointer" />
+              <th className="flex items-center justify-end first:rounded-tr-xl">
+                <img src={CircleIcon} alt="Ações" className="mx-7 my-5 h-2 w-2 cursor-pointer" />
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="bg-white shadow-2xl">
             {employees?.map((employee) => (
               <React.Fragment key={employee.id}>
                 <tr
-                  className="cursor-pointer hover:bg-gray-100"
+                  className="cursor-pointer last:rounded-b-xl hover:bg-gray-100"
                   onClick={() => toggleEmployeeExpand(employee.id)}
                 >
                   <td className="p-4">
@@ -75,7 +75,7 @@ const Table: React.FC<TableProps> = ({ employees }) => {
                 </tr>
                 {expandedEmployeeId === employee.id && (
                   <tr>
-                    <td colSpan={3} className="bg-gray-50 p-4">
+                    <td colSpan={3} className="bg-white p-4">
                       <div className="flex flex-col gap-4 text-black">
                         <div className="flex justify-between gap-2">
                           <h2>Cargo</h2>
