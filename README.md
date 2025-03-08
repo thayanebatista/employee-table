@@ -44,6 +44,23 @@ pnpm build
 - TypeScript
 - Vite
 - ESLint
+- json-server
+
+## Configuração da API Simulada
+
+Para ter acesso aos dados que alimentarão o projeto, siga estas instruções:
+
+1. Instale o json-server (caso ainda não tenha):
+```bash
+npm install -g json-server
+```
+
+2. Inicie o servidor json-server em um terminal separado:
+```bash
+npx json-server db/db.json
+```
+
+O json-server irá disponibilizar os dados da API simulada, geralmente em `http://localhost:3000`.
 
 ## Licença
 Este projeto está sob licença MIT.
