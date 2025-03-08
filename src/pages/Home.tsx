@@ -19,7 +19,7 @@ const Home: React.FC = () => {
   if (error) return <p>Erro ao carregar os dados</p>;
 
   return (
-    <div className="bg-gray h-screen gap-4">
+    <div className="bg-gray h-full gap-4">
       <Header />
       <Table employees={employees} />
     </div>
