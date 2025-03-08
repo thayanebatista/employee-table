@@ -77,20 +77,26 @@ const Table: React.FC<TableProps> = ({ employees }) => {
                       className="h-[34px] w-[34px] rounded-full object-cover"
                     />
                   </td>
-                  <td className="p-4">{employee.name}</td>
-
-                  <td className="hidden p-4 lg:table-cell">{employee.job}</td>
-                  <td className="hidden p-4 lg:table-cell">
-                    {formatDate(employee.admission_date)}
+                  <td className="p-4">
+                    <h3>{employee.name}</h3>
                   </td>
-                  <td className="hidden p-4 lg:table-cell">{formatPhoneNumber(employee.phone)}</td>
+
+                  <td className="hidden p-4 lg:table-cell">
+                    <h3>{employee.job}</h3>
+                  </td>
+                  <td className="hidden p-4 lg:table-cell">
+                    <h3>{formatDate(employee.admission_date)}</h3>
+                  </td>
+                  <td className="hidden p-4 lg:table-cell">
+                    <h3>{formatPhoneNumber(employee.phone)}</h3>
+                  </td>
 
                   <td className="p-4 text-right">
-                    <div className="flex items-center justify-end space-x-2">
+                    <div className="flex items-center justify-end space-x-2 lg:hidden">
                       {expandedEmployeeId === employee.id ? (
-                        <img src={ChevronUpIcon} alt="Expandir" className="h-8 w-8 lg:hidden" />
+                        <img src={ChevronUpIcon} alt="Expandir" className="h-8 w-8" />
                       ) : (
-                        <img src={ChevronDownIcon} alt="Expandir" className="h-8 w-8 lg:hidden" />
+                        <img src={ChevronDownIcon} alt="Expandir" className="h-8 w-8" />
                       )}
                     </div>
                   </td>

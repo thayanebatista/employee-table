@@ -19,11 +19,11 @@ const Home: React.FC = () => {
   if (isLoading) return <Loader isLoading={isLoading} />;
 
   return (
-    <div className="bg-gray h-screen gap-4">
+    <div className="bg-gray gap-4">
       <Header />
 
       {error ? (
-        <div className="h-100 flex items-center justify-center">
+        <div className="flex items-center justify-center">
           <h1>Erro ao carregar os dados</h1>
         </div>
       ) : (
