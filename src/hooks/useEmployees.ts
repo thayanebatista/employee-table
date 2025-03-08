@@ -10,5 +10,6 @@ export function useEmployees() {
       const response = await apiService.get<Employee[]>('/employees');
       return response;
     },
+    retry: false,
   });
 }

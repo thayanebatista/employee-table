@@ -6,7 +6,7 @@ class ApiService {
   constructor() {
     const baseConfig: AxiosRequestConfig = {
       baseURL: 'http://localhost:3000',
-      timeout: 10000,
+      timeout: 3000,
     };
 
     this.axiosInstance = axios.create(baseConfig);
