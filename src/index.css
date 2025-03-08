@@ -3,12 +3,28 @@
 @theme {
   /* Colors */
   --color-primary: #0500FF;
+  --color-black: #1C1C1C;
   --color-gray: #F0F0F0;
+  --color-gray-secondary: #DFDFDF;
+
+  /* Widths */
+  --w-9: 34px;
 
   /* Fonts */
   --font-sans: 'Helvetica Neue', sans-serif;
-  --font-helvetica-roman: 'HelveticaNeueRoman';
-  --font-helvetica-medium: 'HelveticaNeueMedium';
+  --font-medium: 'HelveticaNeueMedium';
+  --font-roman: 'HelveticaNeueRoman';
+  --font-h1-family: 'HelveticaNeueMedium', sans-serif;
+  --font-h1-size: 20px;
+  --font-h1-line-height: 24.42px;
+
+  --font-h2-family: 'HelveticaNeueMedium', sans-serif;
+  --font-h2-size: 16px;
+  --font-h2-line-height: 19.54px;
+
+  --font-h3-family: 'HelveticaNeueRoman', sans-serif;
+  --font-h3-size: 16px;
+  --font-h3-line-height: 19.09px;
 
   /* Shadows */
   --shadow-md: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
@@ -29,19 +45,20 @@
 }
 
 h1 {
-  font-family: 'HelveticaNeueMedium', sans-serif;
-  font-size: 20px;
-  line-height: 24.42px;
+  font-family: var(--font-h1-family);
+  font-size: var(--font-h1-size);
+  line-height: var(--font-h1-line-height);
 }
 
 h2 {
-  font-family: 'HelveticaNeueMedium', sans-serif;
-  font-size: 16px;
-  line-height: 19.54px;
+  font-family: var(--font-h2-family);
+  font-size: var(--font-h2-size);
+  line-height: var(--font-h2-line-height);
 }
 
 h3 {
-  font-family: 'HelveticaNeueRoman', sans-serif;
-  font-size: 16px;
-  line-height: 19.09px;
+  font-family: var(--font-h3-family);
+  font-size: var(--font-h3-size);
+  line-height: var(--font-h3-line-height);
 }
+
