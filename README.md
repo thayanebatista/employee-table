@@ -3,13 +3,10 @@
 ## 🌟 Visão Geral do Projeto
 
 ### O que é?
-Uma aplicação web moderna e intuitiva para gerenciamento de informações de funcionários, desenvolvida com tecnologias de ponta para proporcionar uma experiência de usuário fluida e eficiente.
+Uma aplicação web moderna e intuitiva para gerenciamento de informações de funcionários, desenvolvida com tecnologias de ponta para proporcionar uma experiência de usuário fluida, responsiva e eficiente.
 
 ### Funcionalidades Principais
 - 📋 Listagem completa de funcionários
-- ➕ Adição de novos funcionários
-- ✏️ Edição de informações de funcionários existentes
-- 🗑️ Remoção de funcionários
 - 🔍 Filtro e busca avançados por:
   - Nome
   - Cargo
@@ -21,12 +18,22 @@ Uma aplicação web moderna e intuitiva para gerenciamento de informações de f
 - 🚫 Não possui autenticação avançada ou controle de acesso
 
 ## 🛠️ Tecnologias Utilizadas
-- **Frontend**: React + TypeScript
-- **Bundler**: Vite
-- **Estilização**: Tailwind CSS
-- **Gerenciamento de Estado**: Zustand
+- **Frontend**: [React](https://react.dev/) + TypeScript
+- **Bundler**: [Vite](https://vite.dev/)
+- **Estilização**: [TailwindCSS](https://tailwindcss.com/)
+- **Gerenciamento de Estado**: [Zustand](https://zustand-demo.pmnd.rs/)
 - **Testes**: Jest + React Testing Library
 - **API Simulada**: json-server
+
+## 🔧 Possíveis Futuras Melhorias
+
+### Funcionalidades 
+- ➕ Adição de novos funcionários
+- ✏️ Edição de informações de funcionários existentes
+- 🗑️ Remoção de funcionários
+- 📊 Relatórios e dashboards
+- 🔐 Sistema de autenticação
+  - Area de login com o Google (sugestão)
 
 ## 📦 Pré-requisitos
 
@@ -91,13 +98,6 @@ pnpm test
 # Rodar testes de cobertura
 pnpm test:coverage
 ```
-
-## 🔧 Possíveis Melhorias
-
-### Funcionalidades 
-- 🔐 Sistema de autenticação
-  - Area de login com o Google
-- 📊 Relatórios e dashboards
 
 ### Contribuindo para o Projeto
 
