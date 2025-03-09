@@ -23,6 +23,17 @@ class ApiService {
     this.axiosInstance.interceptors.response.use(
       (response) => response,
       (error) => {
+        console.error('API Error:', error.response?.data);
+
+        switch (error.response?.status) {
+          case 404:
+            console.warn('Recurso não encontrado');
+            break;
+          case 500:
+            console.error('Erro interno do servidor');
+            break;
+        }
+
         return Promise.reject(error);
       },
     );
@@ -32,6 +43,29 @@ class ApiService {
     const response: AxiosResponse<T> = await this.axiosInstance.get(url, {
       params,
     });
+    return response.data;
+  }
+
+  async post<T>(url: string, data: object): Promise<T> {
+    const response: AxiosResponse<T> = await this.axiosInstance.post(url, data);
+    return response.data;
+  }
+
+  async delete<T>(url: string): Promise<T> {
+    const response: AxiosResponse<T> = await this.axiosInstance.delete(url);
+    return response.data;
+  }
+
+  async put<T>(url: string, data: object): Promise<T> {
+    const response: AxiosResponse<T> = await this.axiosInstance.put(url, data);
+    return response.data;
+  }
+
+  async patch<T>(url: string, data: object): Promise<T> {
+    const response: AxiosResponse<T> = await this.axiosInstance.patch(
+      url,
+      data,
+    );
     return response.data;
   }
 }
