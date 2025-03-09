@@ -12,10 +12,10 @@ Uma aplicação web moderna e intuitiva para gerenciamento de informações de f
   - Cargo
   - Telefone
 
-### O que o Projeto NÃO Faz
-- 🚫 Não é um sistema de folha de pagamento completo
-- 🚫 Não gerencia benefícios ou informações de RH detalhadas
-- 🚫 Não possui autenticação avançada ou controle de acesso
+### Detalhes de Implementação
+  - Componente de tabela responsivo
+  - Filtro dinâmico com debounce
+  - Formatação de data e telefone utilizando bibliotecas modernas
 
 ## 🛠️ Tecnologias Utilizadas
 - **Frontend**: [React](https://react.dev/) + TypeScript
@@ -118,10 +118,8 @@ pnpm test:coverage
 ## 📄 Licença
 Distribuído sob a Licença MIT. Veja `LICENSE` para mais informações.
 
-## 🤝 Contato e Suporte
+## Demonstração
 
-Dúvidas ou sugestões? Abra uma issue no GitHub ou entre em contato.
+![Localhost no iPhone 14 Pro Max](https://tinypic.host/image/localhost-8080-%28iPhone-14-Pro-Max%29.3GqCrz)
 
----
-
-**Desenvolvido com ❤️ por Thayane Batista**
+![Localhost Desktop](https://tinypic.host/image/localhost-8080.3GqGHU)
