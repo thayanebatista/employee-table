@@ -83,9 +83,10 @@ export default [
           singleQuote: true,
           semi: true,
           trailingComma: 'all',
-          printWidth: 100,
           tabWidth: 2,
           bracketSpacing: true,
+          singleAttributePerLine: true,
+          experimentalTernaries: true,
           plugins: ['prettier-plugin-tailwindcss'],
         },
       ],
@@ -103,7 +104,11 @@ export default [
       'no-console': ['error', { allow: ['warn', 'error', 'info'] }],
       '@typescript-eslint/no-explicit-any': 'warn',
       'prefer-const': 'error',
-      'lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
+      'lines-between-class-members': [
+        'error',
+        'always',
+        { exceptAfterSingleLine: true },
+      ],
       'no-await-in-loop': 0,
       'no-plusplus': 0,
       'no-shadow': 0,
@@ -117,6 +122,9 @@ export default [
           code: 80,
           ignoreComments: true,
           ignoreStrings: true,
+          ignoreTemplateLiterals: true,
+          ignoreUrls: true,
+          ignorePattern: '^import\\s.+\\sfrom\\s.+;$',
         },
       ],
       'no-use-before-define': 0,
@@ -130,7 +138,10 @@ export default [
       'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.jsx'] }],
       'consistent-return': 0,
       'no-unused-expressions': ['error', { allowShortCircuit: true }],
-      'react/function-component-definition': [2, { namedComponents: 'arrow-function' }],
+      'react/function-component-definition': [
+        2,
+        { namedComponents: 'arrow-function' },
+      ],
       'react/no-array-index-key': 0,
       'react/jsx-props-no-spreading': 0,
       'no-return-assign': ['error', 'except-parens'],
@@ -148,6 +159,13 @@ export default [
 
   // Ignore patterns
   {
-    ignores: ['node_modules/', 'dist/', 'build/', '**/*.d.ts', '.next/', '.turbo/'],
+    ignores: [
+      'node_modules/',
+      'dist/',
+      'build/',
+      '**/*.d.ts',
+      '.next/',
+      '.turbo/',
+    ],
   },
 ];

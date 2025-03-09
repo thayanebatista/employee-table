@@ -38,21 +38,18 @@
 
 h1 {
   font-family: var(--font-h1-family);
-  font-weight: var(--font-h1-weight);
   font-size: var(--font-h1-size);
   line-height: var(--font-h1-line-height);
 }
 
 h2 {
   font-family: var(--font-h2-family);
-  font-weight: var(--font-h2-weight);
   font-size: var(--font-h2-size);
   line-height: var(--font-h2-line-height);
 }
 
 h3 {
   font-family: var(--font-h3-family);
-  font-weight: var(--font-h3-weight);
   font-size: var(--font-h3-size);
   line-height: var(--font-h3-line-height);
 }

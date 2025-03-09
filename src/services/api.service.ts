@@ -29,7 +29,9 @@ class ApiService {
   }
 
   async get<T>(url: string, params?: object): Promise<T> {
-    const response: AxiosResponse<T> = await this.axiosInstance.get(url, { params });
+    const response: AxiosResponse<T> = await this.axiosInstance.get(url, {
+      params,
+    });
     return response.data;
   }
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { SearchInput } from './SearchInput';
+import { useTranslation } from 'react-i18next';
 import { formatDate } from '../utils/formatDate';
 import { Employee } from '../stores/employeeStore';
 import { formatPhoneNumber } from '../utils/phoneFormat';
@@ -15,37 +16,47 @@ interface EmployeesTableProps {
 }
 
 const EmployeesTable: React.FC<EmployeesTableProps> = ({ employees }) => {
-  const [expandedEmployeeId, setExpandedEmployeeId] = useState<string | null>(null);
-  const { searchTerm, setSearchTerm, filteredEmployees } = useEmployeeSearch(employees);
+  const [expandedEmployeeId, setExpandedEmployeeId] = useState<string | null>(
+    null,
+  );
+  const { searchTerm, setSearchTerm, filteredEmployees } =
+    useEmployeeSearch(employees);
 
   const toggleEmployeeExpand = (employeeId: string) => {
     setExpandedEmployeeId((prev) => (prev === employeeId ? null : employeeId));
   };
 
+  const { t } = useTranslation();
+
   return (
-    <div className="flex h-svh flex-col gap-6 rounded-xl py-6">
+    <div className="flex flex-col gap-6 rounded-xl py-6">
       <div className="flex flex-col gap-4 px-5 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-        <h1 className="text-black">Funcionários</h1>
-        <SearchInput onChange={(event) => setSearchTerm(event.target.value)} value={searchTerm} />
+        <h1 className="text-black">
+          {t('employeesTable.title')}
+        </h1>
+        <SearchInput
+          onChange={(event) => setSearchTerm(event.target.value)}
+          value={searchTerm}
+        />
       </div>
-      <div className="px-5 lg:px-8">
+      <div className="h-screen px-5 lg:px-8">
         <table className="w-full border-separate border-spacing-0 overflow-hidden rounded-xl shadow-lg">
           <thead className="bg-primary">
             <tr className="first:rounded-t-xl">
               <th className="p-4 text-left text-white first:rounded-tl-xl">
-                <h2>FOTO</h2>
+                <h2>{t('employeesTable.headers.photo')}</h2>
               </th>
               <th className="p-4 text-left text-white">
-                <h2>NOME</h2>
+                <h2>{t('employeesTable.headers.name')}</h2>
               </th>
               <th className="hidden p-4 text-left text-white lg:table-cell">
-                <h2>CARGO</h2>
+                <h2>{t('employeesTable.headers.job')}</h2>
               </th>
               <th className="hidden p-4 text-left text-white lg:table-cell">
-                <h2>DATA DE ADMISSÃO</h2>
+                <h2>{t('employeesTable.headers.admissionDate')}</h2>
               </th>
               <th className="hidden p-4 text-left text-white lg:table-cell">
-                <h2>TELEFONE</h2>
+                <h2>{t('employeesTable.headers.phone')}</h2>
               </th>
               <th className="flex items-center justify-end first:rounded-tr-xl">
                 <img
@@ -59,7 +70,10 @@ const EmployeesTable: React.FC<EmployeesTableProps> = ({ employees }) => {
           <tbody className="bg-white">
             {filteredEmployees?.length === 0 && (
               <tr>
-                <td colSpan={6} className="p-4 text-center">
+                <td
+                  colSpan={6}
+                  className="p-4 text-center"
+                >
                   Nenhum funcionário encontrado
                 </td>
               </tr>
@@ -93,29 +107,45 @@ const EmployeesTable: React.FC<EmployeesTableProps> = ({ employees }) => {
 
                   <td className="p-4 text-right">
                     <div className="flex items-center justify-end space-x-2 lg:hidden">
-                      {expandedEmployeeId === employee.id ? (
-                        <img src={ChevronUpIcon} alt="Expandir" className="h-8 w-8" />
-                      ) : (
-                        <img src={ChevronDownIcon} alt="Expandir" className="h-8 w-8" />
-                      )}
+                      {expandedEmployeeId === employee.id ?
+                        <img
+                          src={ChevronUpIcon}
+                          alt="Expandir"
+                          className="h-8 w-8"
+                        />
+                      : <img
+                          src={ChevronDownIcon}
+                          alt="Expandir"
+                          className="h-8 w-8"
+                        />
+                      }
                     </div>
                   </td>
                 </tr>
 
                 {expandedEmployeeId === employee.id && (
                   <tr className="lg:hidden">
-                    <td colSpan={3} className="bg-white p-4">
+                    <td
+                      colSpan={3}
+                      className="bg-white p-4"
+                    >
                       <div className="flex flex-col gap-4 text-black">
                         <div className="flex justify-between gap-2">
-                          <h2>Cargo</h2>
+                          <h2 className="font-bold">
+                            {t('employeesTable.expanded.job')}
+                          </h2>
                           <h3>{employee.job}</h3>
                         </div>
                         <div className="flex justify-between gap-2">
-                          <h2>Data de Admissão</h2>
+                          <h2 className="font-bold">
+                            {t('employeesTable.expanded.admissionDate')}
+                          </h2>
                           <h3>{formatDate(employee.admission_date)}</h3>
                         </div>
                         <div className="flex justify-between gap-2">
-                          <h2>Telefone</h2>
+                          <h2 className="font-bold">
+                            {t('employeesTable.expanded.phone')}
+                          </h2>
                           <h3>{formatPhoneNumber(employee.phone)}</h3>
                         </div>
                       </div>

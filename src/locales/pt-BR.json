@@ -1,0 +1,25 @@
+{
+  "header": {
+    "logo": "Logo"
+  },
+  "employeesTable": {
+    "title": "Funcionários",
+    "headers": {
+      "photo": "FOTO",
+      "name": "NOME",
+      "job": "CARGO",
+      "admissionDate": "DATA DE ADMISSÃO",
+      "phone": "TELEFONE"
+    },
+    "expanded": {
+      "job": "Cargo",
+      "admissionDate": "Data de Admissão",
+      "phone": "Telefone"
+    },
+    "searchPlaceholder": "Pesquisar"
+  },
+  "errors": {
+    "genericError": "Ops! Algo inesperado aconteceu. Por favor, tente novamente mais tarde.",
+    "invalidDateFormat": "Formato de data inválido: {{date}}"
+  }
+}

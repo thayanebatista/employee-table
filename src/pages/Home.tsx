@@ -1,15 +1,18 @@
 import React, { useEffect } from 'react';
-import { useEmployeeStore } from '../stores/employeeStore';
+
+import { useTranslation } from 'react-i18next';
 import { useEmployees } from '../hooks/useEmployees';
+import { useEmployeeStore } from '../stores/employeeStore';
 
 import Header from '../components/Header';
 import Loader from '../components/GlobalLoader';
 import EmployeesTable from '../components/EmployeesTable';
 
 const Home: React.FC = () => {
+  const { t } = useTranslation();
+
   const { data: employees, isLoading, error } = useEmployees();
   const setEmployees = useEmployeeStore((state) => state.setEmployees);
-
   useEffect(() => {
     if (employees) {
       setEmployees(employees);
@@ -21,10 +24,9 @@ const Home: React.FC = () => {
   return (
     <div className="bg-gray">
       <Header />
-
       {error ? (
-        <div className="flex items-center justify-center">
-          <h1>Erro ao carregar os dados</h1>
+        <div className="flex h-svh items-center justify-center">
+          <h1>{t('errors.genericError')}</h1>
         </div>
       ) : (
         <EmployeesTable employees={employees} />
