@@ -120,6 +120,5 @@ Distribuído sob a Licença MIT. Veja `LICENSE` para mais informações.
 
 ## Demonstração
 
-![Localhost no iPhone 14 Pro Max](https://tinypic.host/image/localhost-8080-%28iPhone-14-Pro-Max%29.3GqCrz)
-
-![Localhost Desktop](https://tinypic.host/image/localhost-8080.3GqGHU)
+![localhost 8080 (iPhone 14 Pro Max)](https://tinypic.host/images/2025/03/09/localhost_8080_iPhone-14-Pro-Max.png)
+![localhost 8080](https://tinypic.host/images/2025/03/09/localhost_8080_.png)
