@@ -22,7 +22,7 @@ Uma aplicação web moderna e intuitiva para gerenciamento de informações de f
 - **Bundler**: [Vite](https://vite.dev/)
 - **Estilização**: [TailwindCSS](https://tailwindcss.com/)
 - **Gerenciamento de Estado**: [Zustand](https://zustand-demo.pmnd.rs/)
-- **Testes**: Jest + React Testing Library
+- **Testes**: Vitest + React Testing Library
 - **API Simulada**: json-server
 
 ## 🔧 Possíveis Futuras Melhorias

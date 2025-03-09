@@ -16,18 +16,29 @@
     "jsx": "react-jsx",
 
     /* Linting */
+    "allowJs": true,
     "strict": true,
+    "strictNullChecks": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true,
-
     "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     }
   },
-  "include": ["src"]
+  "include": [
+    "vite.config.mts",
+    "/src/**/*",
+    "src/**/*.ts",
+    "src/**/*.ext",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/**/*.json",
+    "test/**/*.spec.ts",
+    "vite.config.mts"
+  ]
 }
