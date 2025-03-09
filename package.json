@@ -20,7 +20,6 @@
     "@tailwindcss/cli": "^4.0.11",
     "@tailwindcss/postcss": "^4.0.11",
     "@tailwindcss/vite": "^4.0.9",
-    "@tanstack/react-query": "^5.67.1",
     "@vitejs/plugin-react-swc": "^3.8.0",
     "axios": "^1.8.1",
     "date-fns": "^4.1.0",
