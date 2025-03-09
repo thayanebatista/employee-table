@@ -31,9 +31,7 @@ const EmployeesTable: React.FC<EmployeesTableProps> = ({ employees }) => {
   return (
     <div className="flex flex-col gap-6 rounded-xl py-6">
       <div className="flex flex-col gap-4 px-5 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-        <h1 className="text-black">
-          {t('employeesTable.title')}
-        </h1>
+        <h1 className="text-black">{t('employeesTable.title')}</h1>
         <SearchInput
           onChange={(event) => setSearchTerm(event.target.value)}
           value={searchTerm}

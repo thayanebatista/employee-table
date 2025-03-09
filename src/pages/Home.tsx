@@ -24,13 +24,11 @@ const Home: React.FC = () => {
   return (
     <div className="bg-gray">
       <Header />
-      {error ? (
+      {error ?
         <div className="flex h-svh items-center justify-center">
           <h1>{t('errors.genericError')}</h1>
         </div>
-      ) : (
-        <EmployeesTable employees={employees} />
-      )}
+      : <EmployeesTable employees={employees} />}
     </div>
   );
 };
