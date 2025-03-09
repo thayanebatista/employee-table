@@ -32,12 +32,12 @@ describe('ApiService', () => {
 
   it('deve fazer uma requisição GET corretamente', async () => {
     mocks.get.mockResolvedValueOnce({
-      data: [ { id: 1, name: 'John Doe' } ],
+      data: [{ id: 1, name: 'John Doe' }],
     });
 
     const data = await apiService.get('/');
 
     expect(mocks.get).toHaveBeenCalled();
-    expect(data).toEqual([ { id: 1, name: 'John Doe' } ]);
+    expect(data).toEqual([{ id: 1, name: 'John Doe' }]);
   });
 });
