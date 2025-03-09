@@ -9,7 +9,7 @@ const Loader: React.FC<LoaderProps> = ({ isLoading }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-      <div className="h-10 w-10 animate-spin rounded-full border-b-2 border-t-2 border-white" />
+      <div className="h-10 w-10 animate-spin rounded-full border-t-2 border-b-2 border-white" />
     </div>
   );
 };
