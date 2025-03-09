@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { useEmployeeStore } from '../stores/employeeStore';
 import { useEmployees } from '../hooks/useEmployees';
 
-import Table from '../components/Table';
 import Header from '../components/Header';
 import Loader from '../components/GlobalLoader';
+import EmployeesTable from '../components/EmployeesTable';
 
 const Home: React.FC = () => {
   const { data: employees, isLoading, error } = useEmployees();
@@ -19,7 +19,7 @@ const Home: React.FC = () => {
   if (isLoading) return <Loader isLoading={isLoading} />;
 
   return (
-    <div className="bg-gray gap-4">
+    <div className="bg-gray">
       <Header />
 
       {error ? (
@@ -27,7 +27,7 @@ const Home: React.FC = () => {
           <h1>Erro ao carregar os dados</h1>
         </div>
       ) : (
-        <Table employees={employees} />
+        <EmployeesTable employees={employees} />
       )}
     </div>
   );

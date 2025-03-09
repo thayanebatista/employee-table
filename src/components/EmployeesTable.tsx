@@ -1,39 +1,32 @@
 import React, { useState } from 'react';
 
-import { format } from 'date-fns';
-import { ptBR } from 'date-fns/locale';
 import { SearchInput } from './SearchInput';
+import { formatDate } from '../utils/formatDate';
 import { Employee } from '../stores/employeeStore';
-import { usePhoneFormat } from '../hooks/usePhoneFormat';
+import { formatPhoneNumber } from '../utils/phoneFormat';
+import { useEmployeeSearch } from '../hooks/useEmployeeSearch';
 
 import CircleIcon from '../assets/icons/Circle.svg';
 import ChevronUpIcon from '../assets/icons/ChevronUp.svg';
 import ChevronDownIcon from '../assets/icons/ChevronDown.svg';
 
-interface TableProps {
+interface EmployeesTableProps {
   employees?: Employee[];
 }
 
-const Table: React.FC<TableProps> = ({ employees }) => {
+const EmployeesTable: React.FC<EmployeesTableProps> = ({ employees }) => {
   const [expandedEmployeeId, setExpandedEmployeeId] = useState<string | null>(null);
+  const { searchTerm, setSearchTerm, filteredEmployees } = useEmployeeSearch(employees);
 
   const toggleEmployeeExpand = (employeeId: string) => {
     setExpandedEmployeeId((prev) => (prev === employeeId ? null : employeeId));
   };
 
-  const { formatPhoneNumber } = usePhoneFormat();
-
-  const formatDate = (date: string) => {
-    return format(new Date(date), 'dd/MM/yyyy', { locale: ptBR });
-  };
-
   return (
-    <div className="flex flex-col gap-6 rounded-xl py-6">
+    <div className="flex h-svh flex-col gap-6 rounded-xl py-6">
       <div className="flex flex-col gap-4 px-5 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-        <div>
-          <h1 className="text-black">Funcionários</h1>
-        </div>
-        <SearchInput />
+        <h1 className="text-black">Funcionários</h1>
+        <SearchInput onChange={(event) => setSearchTerm(event.target.value)} value={searchTerm} />
       </div>
       <div className="px-5 lg:px-8">
         <table className="w-full border-separate border-spacing-0 overflow-hidden rounded-xl shadow-lg">
@@ -64,7 +57,14 @@ const Table: React.FC<TableProps> = ({ employees }) => {
             </tr>
           </thead>
           <tbody className="bg-white">
-            {employees?.map((employee) => (
+            {filteredEmployees?.length === 0 && (
+              <tr>
+                <td colSpan={6} className="p-4 text-center">
+                  Nenhum funcionário encontrado
+                </td>
+              </tr>
+            )}
+            {filteredEmployees?.map((employee) => (
               <React.Fragment key={employee.id}>
                 <tr
                   className="cursor-pointer hover:bg-gray-100 lg:cursor-default"
@@ -131,4 +131,4 @@ const Table: React.FC<TableProps> = ({ employees }) => {
   );
 };
 
-export default Table;
+export default EmployeesTable;
