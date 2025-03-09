@@ -120,5 +120,6 @@ Distribuído sob a Licença MIT. Veja `LICENSE` para mais informações.
 
 ## Demonstração
 
-![localhost 8080 (iPhone 14 Pro Max)](https://tinypic.host/images/2025/03/09/localhost_8080_iPhone-14-Pro-Max.png)
-![localhost 8080](https://tinypic.host/images/2025/03/09/localhost_8080_.png)
+<img src="https://tinypic.host/images/2025/03/09/localhost_8080_iPhone-14-Pro-Max.png" width="300" height="auto" alt="localhost 8080 (iPhone 14 Pro Max)">
+
+<img src="https://tinypic.host/images/2025/03/09/localhost_8080_.png" width="500" height="auto" alt="localhost 8080">
